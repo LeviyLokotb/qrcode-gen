@@ -11,7 +11,7 @@ pipeline{
         }
         stage('Clear Workdir'){
             steps{
-                sh 'rm -rf .'
+                sh 'rm -rf *'
             }
         }
         stage('Send files to remote server'){
@@ -20,7 +20,7 @@ pipeline{
                     publishers:[
                         configName: "Ubuntu2",
                         transfers: [
-                            sshTransfer(sourceFiles: ".")
+                            sshTransfer(sourceFiles: "*")
                         ]
                     ]
                 )
