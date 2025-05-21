@@ -16,7 +16,7 @@ pipeline{
         }
         stage('Send files to remote server'){
             steps{
-\               sshPublisher(
+                sshPublisher(
                 publishers: [
                     sshPublisherDesc(
                         configName: "Ubuntu2",
